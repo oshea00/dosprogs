@@ -19,7 +19,7 @@ void push(NODE *head, int value);
 int  pop(NODE *head);
 void dumpStack(NODE *head);
 int  isTail(NODE *node);
-int  isEmpty(NODE *node);
+int  isEmpty(NODE *head);
 NODE *findItem(NODE *head, int value);
 void deleteItems(NODE *head, int value);
 void deleteItem(NODE *head, NODE *item);
@@ -162,8 +162,8 @@ int isTail(NODE *node) {
 		return 0;
 }
 
-int isEmpty(NODE *node) {
-	if (node->next->next == node->next)
+int isEmpty(NODE *head) {
+	if (head->next->next == head->next)
 		return 1;
 	else
 		return 0;
