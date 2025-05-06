@@ -26,52 +26,50 @@ void deleteItem(NODE *head, NODE *item);
 
 void main() {
 	int items[] = {1,2,3,3,4,5};
-	int itemCnt = 6;
+	int itemCnt = sizeof(items) / sizeof(items[0]);
 	int i=0;
-	int search = 3;
-	int ch;
-	NODE *list;
+	int search;
+	NODE *stack;
 	NODE *node;
 
-	/* Create list */
-	list = createStack();
+	stack = createStack();
 
-	/* do stuff with list */
+	/* do stuff with stack */
 	for (i=0;i<itemCnt;i++)
 	{
-		push(list,items[i]);
+		push(stack,items[i]);
 	}
 	printf("Dumping stack...\n");
-	dumpStack(list);
+	dumpStack(stack);
 
 	search = 3;
-	deleteItems(list, search);
+	deleteItems(stack, search);
 
 	printf("Dumping stack...\n");
-	dumpStack(list);
+	dumpStack(stack);
 
 	search = 9;
-	deleteItems(list, search);
+	deleteItems(stack, search);
 
 
 	printf("Pop remaining items:\n");
-	while (!isEmpty(list))
+	while (!isEmpty(stack))
 	{
-		printf("popped: %d\n",pop(list));
+		printf("popped: %d\n",pop(stack));
 	}
 
 	printf("Dumping stack...\n");
-	dumpStack(list);
-	if (isEmpty(list))
+	dumpStack(stack);
+	if (isEmpty(stack))
 		printf("Stack empty.\n");
 
 
 	printf("Hit any key to exit.\n");
-	ch = getch();
+	getch();
 
 	/* cleanup list */
 	printf("Cleaning up...\n");
-	destroyStack(list);
+	destroyStack(stack);
 }
 
 void deleteItems(NODE *head, int value) {
