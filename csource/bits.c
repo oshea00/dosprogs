@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**************************************************************************************************/
+/* Calculates the number of bits set to 1 - or the Hamming Weight.                                */
+/* See visualization here https://claude.ai/public/artifacts/4ac923e6-730e-466f-89f6-8ba85244ac09 */
+/**************************************************************************************************/
+
 int pop(unsigned x);
 
 void main() {
